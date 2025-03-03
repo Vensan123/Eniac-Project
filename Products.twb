@@ -1,0 +1,1257 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='Book1_17406493542890' path='/workbooks' revision='1.8' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Parameter 1' datatype='integer' name='[Parameter 1]' param-domain-type='any' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+      </column>
+    </datasource>
+    <datasource caption='product_id_pcn_english' inline='true' name='federated.18c91vf08924o715pqi841wu8kva' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='product_id_pcn_english' name='textscan.0yssve80xwcmv51f17ryl1qilia6'>
+            <connection class='textscan' directory='/Users/mzy/Desktop/Bootcamp/magist_dump' filename='product_id_pcn_english.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0yssve80xwcmv51f17ryl1qilia6' name='product_id_pcn_english.csv' table='[product_id_pcn_english#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+            <column datatype='string' name='product_id' ordinal='0' />
+            <column datatype='string' name='product_category_name' ordinal='1' />
+            <column datatype='string' name='product_category_name_english' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[product_id_pcn_english.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_id]</local-name>
+            <parent-name>[product_id_pcn_english.csv]</parent-name>
+            <remote-alias>product_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_category_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_category_name]</local-name>
+            <parent-name>[product_id_pcn_english.csv]</parent-name>
+            <remote-alias>product_category_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>product_category_name_english</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[product_category_name_english]</local-name>
+            <parent-name>[product_id_pcn_english.csv]</parent-name>
+            <remote-alias>product_category_name_english</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Product Category Name English (group)]' role='dimension' type='nominal'>
+        <calculation class='categorical-bin' column='[product_category_name_english]' default='&quot;Other&quot;' new-bin='true'>
+          <bin default-name='true' value='&quot;computers, computers_accessories, consoles_games and 4 more&quot;'>
+            <value>&quot;computers&quot;</value>
+            <value>&quot;computers_accessories&quot;</value>
+            <value>&quot;consoles_games&quot;</value>
+            <value>&quot;electronics&quot;</value>
+            <value>&quot;pc_gamer&quot;</value>
+            <value>&quot;tablets_printing_image&quot;</value>
+            <value>&quot;telephony&quot;</value>
+          </bin>
+        </calculation>
+      </column>
+      <column caption='product_id_pcn_english.csv' datatype='table' name='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' role='measure' type='quantitative' />
+      <column caption='Product Category Name' datatype='string' name='[product_category_name]' role='dimension' type='nominal' />
+      <column caption='Product Category Name English' datatype='string' name='[product_category_name_english]' role='dimension' type='nominal' />
+      <column caption='Product Id' datatype='string' name='[product_id]' role='dimension' type='nominal' />
+      <column-instance column='[Product Category Name English Set]' derivation='InOut' name='[io:Product Category Name English Set:nk]' pivot='key' type='nominal'>
+        <aliases>
+          <alias key='false' value='Other Products' />
+          <alias key='true' value='High Tech' />
+        </aliases>
+      </column-instance>
+      <column-instance column='[product_category_name_english]' derivation='None' name='[none:product_category_name_english:nk]' pivot='key' type='nominal' />
+      <group caption='Product Category Name English Set' name='[Product Category Name English Set]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;computers&quot;' />
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;computers_accessories&quot;' />
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;consoles_games&quot;' />
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;electronics&quot;' />
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;pc_gamer&quot;' />
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;tablets_printing_image&quot;' />
+          <groupfilter function='member' level='[product_category_name_english]' member='&quot;telephony&quot;' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/qp/byv49jm10nl3sccrqp350xn80000gn/T/tableau-temp/#TableauTemp_0uveevb1mtmc7e153yzhj14s95sa.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>product_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>product_id_pcn_english.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>32951</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_category_name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_category_name]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_category_name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>product_id_pcn_english.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>109</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>product_category_name_english</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[product_category_name_english]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>product_category_name_english</remote-alias>
+              <ordinal>2</ordinal>
+              <family>product_id_pcn_english.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>109</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout common-percentage='0.775971' dim-ordering='alphabetic' measure-ordering='alphabetic' parameter-percentage='0.224029' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:product_category_name_english:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;books_general_interest&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;fashion_bags_accessories&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;home_construction&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;sports_leisure&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;agro_industry_and_commerce&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;cool_stuff&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;furniture_living_room&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;pc_gamer&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;audio&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;drinks&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;home_appliances&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;security_and_services&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;christmas_supplies&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;fashion_sport&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;la_cuisine&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;toys&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;books_imported&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;fashion_childrens_clothes&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;housewares&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;stationery&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;auto&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;dvds_blu_ray&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;home_appliances_2&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;signaling_and_security&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;construction_tools_lights&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;furniture_bedroom&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;others&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;air_conditioning&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;costruction_tools_garden&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;furniture_mattress_and_upholstery&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;perfumery&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;consoles_games&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;food&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;musical_instruments&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;baby&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;electronics&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;home_comfort_2&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;small_appliances&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;cine_photo&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;fashion_underwear_beach&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;luggage_accessories&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;watches_gifts&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;computers&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;fixed_telephony&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;market_place&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;construction_tools_construction&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;food_drink&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;office_furniture&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;construction_tools_safety&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;furniture_decor&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;party_supplies&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;books_technical&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;fashion_male_clothing&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;industry_commerce_and_business&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;tablets_printing_image&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;bed_bath_table&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;fashio_female_clothing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;home_confort&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;small_appliances_home_oven_and_coffee&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;art&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;costruction_tools_tools&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;garden_tools&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;pet_shop&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;computers_accessories&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;flowers&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;music&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;cds_dvds_musicals&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;fashion_shoes&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;kitchen_dining_laundry_garden_furniture&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;telephony&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;arts_and_craftmanship&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;diapers_and_hygiene&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;health_beauty&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;portable_kitchen_food_processors&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Product Category Name English (group)]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;books_general_interest&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;fashion_bags_accessories&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;home_construction&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;sports_leisure&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;agro_industry_and_commerce&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;agro_industry_and_commerce, air_conditioning, art&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;cool_stuff&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;furniture_living_room&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;pc_gamer&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;audio&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;drinks&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;home_appliances&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;security_and_services&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;christmas_supplies&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;fashion_sport&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;la_cuisine&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;toys&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;books_imported&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;fashion_childrens_clothes&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;housewares&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;stationery&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;auto&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;dvds_blu_ray&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;home_appliances_2&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;signaling_and_security&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;construction_tools_lights&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;furniture_bedroom&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;others&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;air_conditioning&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;costruction_tools_garden&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;furniture_mattress_and_upholstery&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;perfumery&quot;</bucket>
+            </map>
+            <map to='#a2a2a2'>
+              <bucket>&quot;Other&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;consoles_games&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;food&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;musical_instruments&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;baby&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;electronics&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;home_comfort_2&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;small_appliances&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;cine_photo&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;fashion_underwear_beach&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;luggage_accessories&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;watches_gifts&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;computers&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;fixed_telephony&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;market_place&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;construction_tools_construction&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;food_drink&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;office_furniture&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;construction_tools_safety&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;furniture_decor&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;party_supplies&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;books_technical&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;fashion_male_clothing&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;industry_commerce_and_business&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;tablets_printing_image&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;computers, computers_accessories, consoles_games and 4 more&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;bed_bath_table&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;fashio_female_clothing&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;home_confort&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;small_appliances_home_oven_and_coffee&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;art&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;costruction_tools_tools&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;garden_tools&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;pet_shop&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;computers_accessories&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;flowers&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;music&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;cds_dvds_musicals&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;fashion_shoes&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;kitchen_dining_laundry_garden_furniture&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;telephony&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;arts_and_craftmanship&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;diapers_and_hygiene&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;health_beauty&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;portable_kitchen_food_processors&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[io:Product Category Name English Set:nk]' type='palette'>
+            <map to='#a2a2a2'>
+              <bucket>false</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>true</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[Product Category Name English Set]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>(&quot;computers&quot;)</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>(&quot;pc_gamer&quot;)</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>(&quot;electronics&quot;)</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>(&quot;tablets_printing_image&quot;)</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>(&quot;consoles_games&quot;)</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>(&quot;computers_accessories&quot;)</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>(&quot;telephony&quot;)</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='product_id_pcn_english.csv' id='product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB'>
+            <properties context=''>
+              <relation connection='textscan.0yssve80xwcmv51f17ryl1qilia6' name='product_id_pcn_english.csv' table='[product_id_pcn_english#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='string' name='product_id' ordinal='0' />
+                  <column datatype='string' name='product_category_name' ordinal='1' />
+                  <column datatype='string' name='product_category_name_english' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='product_id_pcn_english' name='federated.18c91vf08924o715pqi841wu8kva' />
+          </datasources>
+          <datasource-dependencies datasource='federated.18c91vf08924o715pqi841wu8kva'>
+            <column-instance column='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' derivation='Count' name='[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='product_id_pcn_english.csv' datatype='table' name='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' role='measure' type='quantitative' />
+            <column-instance column='[Product Category Name English Set]' derivation='InOut' name='[io:Product Category Name English Set:nk]' pivot='key' type='nominal'>
+              <aliases>
+                <alias key='false' value='Other Products' />
+                <alias key='true' value='High Tech' />
+              </aliases>
+            </column-instance>
+            <column-instance column='[product_category_name_english]' derivation='None' name='[none:product_category_name_english:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category Name English' datatype='string' name='[product_category_name_english]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <filter class='categorical' column='[federated.18c91vf08924o715pqi841wu8kva].[none:product_category_name_english:nk]'>
+            <groupfilter function='level-members' level='[none:product_category_name_english:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.18c91vf08924o715pqi841wu8kva].[none:product_category_name_english:nk]</column>
+            <column>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='legend'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.18c91vf08924o715pqi841wu8kva].[io:Product Category Name English Set:nk]' />
+              <wedge-size column='[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' />
+              <text column='[federated.18c91vf08924o715pqi841wu8kva].[io:Product Category Name English Set:nk]' />
+              <text column='[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]' />
+              <text column='[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-family' value='Helvetica' />
+                <format attr='font-size' value='14' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <mark-labels>
+          <mark-label id='0'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[io:Product Category Name English Set:nk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>3649</value>
+                <value>true</value>
+                <value>0.11074018997905982</value>
+                <value>&quot;[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]&quot;</value>
+                <value>3649.0</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='25' y='39' />
+          </mark-label>
+        </mark-labels>
+      </table>
+      <simple-id uuid='{5B334860-F383-476F-B4E7-EEB68BF80EB3}' />
+    </worksheet>
+    <worksheet name='Sheet 1 (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='product_id_pcn_english' name='federated.18c91vf08924o715pqi841wu8kva' />
+          </datasources>
+          <datasource-dependencies datasource='federated.18c91vf08924o715pqi841wu8kva'>
+            <column-instance column='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' derivation='Count' name='[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='product_id_pcn_english.csv' datatype='table' name='[__tableau_internal_object_id__].[product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB]' role='measure' type='quantitative' />
+            <column-instance column='[product_category_name_english]' derivation='None' name='[none:product_category_name_english:nk]' pivot='key' type='nominal' />
+            <column caption='Product Category Name English' datatype='string' name='[product_category_name_english]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <filter class='categorical' column='[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]' />
+          <filter class='categorical' column='[federated.18c91vf08924o715pqi841wu8kva].[none:product_category_name_english:nk]'>
+            <groupfilter function='level-members' level='[none:product_category_name_english:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.18c91vf08924o715pqi841wu8kva].[none:product_category_name_english:nk]</column>
+            <column>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</column>
+            <column>[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' value='on' />
+            <format attr='line-pattern-only' value='dotted' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='annotation'>
+            <format attr='stroke-color' id='annotation_2' value='#000000' />
+            <format attr='fill-color' id='annotation_2' value='#00000000' />
+            <format attr='fill-color' id='annotation_3' value='#00000000' />
+            <format attr='stroke-color' id='annotation_3' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]' />
+              <wedge-size column='[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' />
+              <text column='[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]' />
+              <text column='[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]' />
+              <text column='[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-family' value='Helvetica' />
+                <format attr='font-size' value='14' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='size' value='1' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#000000' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+        <mark-labels>
+          <mark-label id='0' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[product_category_name_english]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;tablets_printing_image&quot;</value>
+                <value>9</value>
+                <value>0.002466429158673609</value>
+                <value>&quot;[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]&quot;</value>
+                <value>9.0</value>
+                <value>(&quot;tablets_printing_image&quot;)</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='-124' y='5' />
+          </mark-label>
+          <mark-label id='1' label-state='off'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[product_category_name_english]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;pc_gamer&quot;</value>
+                <value>3</value>
+                <value>1.0</value>
+                <value>&quot;[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]&quot;</value>
+                <value>3.0</value>
+                <value>(&quot;pc_gamer&quot;)</value>
+              </tuple>
+            </tuple-reference>
+          </mark-label>
+          <mark-label id='2'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[product_category_name_english]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;computers&quot;</value>
+                <value>30</value>
+                <value>0.0082214305289120305</value>
+                <value>&quot;[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]&quot;</value>
+                <value>30.0</value>
+                <value>(&quot;computers&quot;)</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='4' y='36' />
+          </mark-label>
+          <mark-label id='3'>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[product_category_name_english]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[pcto:cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[:Measure Names]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Multiple Values]</field>
+                  <field>[federated.18c91vf08924o715pqi841wu8kva].[Product Category Name English Set]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;consoles_games&quot;</value>
+                <value>317</value>
+                <value>0.086873115922170452</value>
+                <value>&quot;[federated.18c91vf08924o715pqi841wu8kva].[__tableau_internal_object_id__].[cnt:product_id_pcn_english.csv_C232D0241F5E4090A486E137EC1C2FEB:qk]&quot;</value>
+                <value>317.0</value>
+                <value>(&quot;consoles_games&quot;)</value>
+              </tuple>
+            </tuple-reference>
+            <label-position x='0.5' y='-42' />
+          </mark-label>
+        </mark-labels>
+        <annotations>
+          <annotation class='point' id='2' mark-position='1' pullback='0' text-width='116'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontname='Helvetica' fontsize='14'>pc_gamer</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run bold='true' fontalignment='1' fontname='Helvetica' fontsize='14'>3</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run bold='true' fontalignment='1' fontname='Helvetica' fontsize='14'>0,08%</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.430151'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.560498'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-201' y='97' />
+          </annotation>
+          <annotation class='point' id='3' mark-position='1' pullback='0' text-width='241'>
+            <formatted-text>
+              <run bold='true' fontalignment='1' fontname='Helvetica' fontsize='14'>tablets_printing_image</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run bold='true' fontalignment='1' fontname='Helvetica' fontsize='14'>9</run>
+              <run fontalignment='1'>Æ&#10;</run>
+              <run bold='true' fontalignment='1' fontname='Helvetica' fontsize='14'>0,25%</run>
+            </formatted-text>
+            <point>
+              <visual-coordinate class='axis'>
+                <x-coord cell-offset='0.426077'>
+                  <node-reference />
+                </x-coord>
+                <y-coord cell-offset='0.559609'>
+                  <node-reference />
+                </y-coord>
+                <page-reference />
+              </visual-coordinate>
+            </point>
+            <body x='-283' y='18' />
+          </annotation>
+        </annotations>
+      </table>
+      <simple-id uuid='{B2122D71-DDCE-4D98-9B38-915540471251}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card param='[federated.18c91vf08924o715pqi841wu8kva].[none:product_category_name_english:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{9E6449A3-5A29-4498-9C79-2F5249BA2FB5}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 1 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='300'>
+            <card param='[federated.18c91vf08924o715pqi841wu8kva].[none:product_category_name_english:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+      <simple-id uuid='{19FD8D0D-8C1C-410F-841A-106FD6BA47B6}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 1 (2)' width='192'>
+      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
+      4P8BIt6VweELv5oAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
